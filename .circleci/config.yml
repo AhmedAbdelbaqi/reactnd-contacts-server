@@ -29,4 +29,5 @@ workflows:
     jobs:
       - install-node-example
       - eb-Deploy
-        requires: install-node-example
+        requires: 
+          - install-node-example
