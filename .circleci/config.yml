@@ -1,6 +1,7 @@
 version: '2.1'
 orbs:
   node: circleci/node@5.0.2
+  aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
   install-node-example:
     docker:
@@ -14,7 +15,18 @@ jobs:
               yarn
               yarn prettier 
               yarn build 
+  eb-Deploy:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - eb/setup
+      - run:
+          command: |
+            eb deploy 
 workflows:
   test_my_app:
     jobs:
       - install-node-example
+      - eb-Deploy
+        requires: install-node-example
