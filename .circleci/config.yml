@@ -12,11 +12,9 @@ jobs:
         node-version: '16.17'
       - run:
           name: install Packages
-          command: |
-            yarn
+          command: yarn 
   printMessage: 
-    - run: | 
-      echo "Everything is good"          
+    - run: echo "Everything is good"         
 workflows:
   Node-workflow:
     jobs:
