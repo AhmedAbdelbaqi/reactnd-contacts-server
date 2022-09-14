@@ -28,6 +28,6 @@ workflows:
   test_my_app:
     jobs:
       - install-node-example
-      - eb-Deploy
+      - eb-Deploy:
         requires: 
           - install-node-example
