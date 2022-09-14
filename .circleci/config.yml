@@ -11,23 +11,14 @@ jobs:
       - node/install:
           install-yarn: true
           node-version: '16.17'
+      - eb/setup
       - run: |
               yarn
               yarn prettier 
               yarn build 
-  eb-Deploy:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - checkout
-      - eb/setup
-      - run:
-          command: |
-            eb deploy 
+              eb deploy 
 workflows:
   test_my_app:
     jobs:
       - install-node-example
-      - eb-Deploy:
-          requires: 
-            - install-node-example
+      

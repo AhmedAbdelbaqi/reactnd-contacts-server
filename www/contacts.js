@@ -24,8 +24,8 @@ const defaultData = {
       avatarURL: config.origin + '/tyler.jpg',
     },
     {
-      name: 'Guillaume',
-      email: 'Guillaume@dummy.com.net',
+      name: 'Ahmed',
+      email: 'Ahmed@dummy.com',
       avatarURL: config.origin + '/dummy.jpg',
     },
   ],
