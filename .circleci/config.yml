@@ -14,7 +14,9 @@ jobs:
           name: install Packages
           command: yarn 
   printMessage: 
-    - run: echo "Everything is good"         
+    - run: 
+          name: Print Message
+          command: echo "Everything is good"         
 workflows:
   Node-workflow:
     jobs:
