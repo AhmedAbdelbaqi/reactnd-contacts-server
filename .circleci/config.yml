@@ -13,6 +13,7 @@ jobs:
       - run: |
               yarn
               yarn prettier 
+              yarn build 
 workflows:
   test_my_app:
     jobs:
