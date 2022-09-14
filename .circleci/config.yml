@@ -18,7 +18,7 @@ jobs:
     - run: | 
       echo "Everything is good"          
 workflows:
-  elastic-beanstalk-workflow:
+  Node-workflow:
     jobs:
       - install-node
       - printMessage
