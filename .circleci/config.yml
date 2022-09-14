@@ -1,24 +1,17 @@
 version: '2.1'
 orbs:
-  node: circleci/node@5.0.2
-jobs: 
-  install-node:
+  node: circleci/node@x.y
+jobs:
+  install-node-example:
     docker:
       - image: 'cimg/base:stable'
     steps:
       - checkout
       - node/install:
-        install-yarn: true
-        node-version: '16.17'
-      - run:
-          name: install Packages
-          command: yarn 
-  printMessage: 
-    - run: 
-          name: Print Message
-          command: echo "Everything is good"         
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
 workflows:
-  Node-workflow:
+  test_my_app:
     jobs:
-      - install-node
-      - printMessage
+      - install-node-example
